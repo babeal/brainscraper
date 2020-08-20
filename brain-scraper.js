@@ -99,12 +99,12 @@ class BrainScraper {
 
     // process each deck found in the pack
     for (const deckUrl of deckUrls) {
-      await this.scrapeDeck(deckUrl);
+      await this.scrapeDeck(deckUrl, packTitle);
     }
     //await this.scrapeDeck(deckUrls[0]);
   }
 
-  async scrapeDeck(url) {
+  async scrapeDeck(url, packTitle) {
     console.log(chalk.blue(`loading deck at ${url}`));
     await this.page.goto(url, { waitUntil: "networkidle2" });
     await this.page.screenshot({ path: "deck-url.png" });
@@ -125,7 +125,7 @@ class BrainScraper {
     );
     const cards = await Promise.all(cardContentFutures);
 
-    await this.output.open(deckTitle);
+    await this.output.open(deckTitle, packTitle);
     for (const card of cards) {
       await this.output.write(card)
     }

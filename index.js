@@ -18,7 +18,11 @@ const main = async () => {
 
     await scraper.init(new FileWriter());
     await scraper.login(username, password);
-    await scraper.scrapePack(packUrl);
+    if (packUrl.includes("pack")) {
+      await scraper.scrapeDeck(packUrl)
+    } else {
+      await scraper.scrapePack(packUrl);
+    }
   }
 
   process.exit();
