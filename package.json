@@ -1,0 +1,29 @@
+{
+  "name": "brainscraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babeal/brainscraper.git"
+  },
+  "keywords": [
+    "brainscape",
+    "html",
+    "scraper"
+  ],
+  "author": "Brandt Beal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/babeal/brainscraper/issues"
+  },
+  "homepage": "https://github.com/babeal/brainscraper#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "puppeteer": "^5.2.1"
+  }
+}
